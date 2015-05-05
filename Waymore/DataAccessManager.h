@@ -17,7 +17,7 @@
 + (id) getInstance;
 
 - (NSString *) getID;
-- (void) sendLocationwithLat:(float) lat andLon:(float) lon byUser: (NSString *) userid;
+- (void) sendLocationwithLat:(float) lat andLon:(float) lon;
 - (BOOL) addUser: (NSString *) userId;
 - (WaymoreUser *) getUserWithUserId: (NSString *) userId;
 - (NSArray *) getSnippetWithFilter: (SnippetFilter *) snippetFilter;

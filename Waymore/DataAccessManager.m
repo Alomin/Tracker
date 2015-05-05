@@ -56,7 +56,7 @@
     return newStr;
 }
 
-- (void) sendLocationwithLat:(float) lat andLon:(float) lon byUser: (NSString *) userid{
+- (void) sendLocationwithLat:(float) lat andLon:(float) lon{
     // Create the request.
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://160.39.209.169:5000"]];
     
@@ -73,7 +73,7 @@
     
     
     NSDictionary *tmp = [[NSDictionary alloc] initWithObjectsAndKeys:
-                         userid, @"userid",
+                         _userId, @"userid",
                          sendlat, @"lat",
                          sendlon, @"lon",
                          nil];
