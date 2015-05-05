@@ -63,7 +63,7 @@
 		2D4A81C01AF30B7B0079A54F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2D4A81C21AF30CCF0079A54F /* RouteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteViewController.h; sourceTree = "<group>"; };
 		2D4A81C31AF30CCF0079A54F /* RouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteViewController.m; sourceTree = "<group>"; };
-		2D6C52021AF2CC1F002D9BBD /* Waymore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Waymore.app; path = Tracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D6C52021AF2CC1F002D9BBD /* Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D6C52061AF2CC1F002D9BBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D6C52071AF2CC1F002D9BBD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2D6C52091AF2CC1F002D9BBD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -151,7 +151,7 @@
 		2D6C52031AF2CC1F002D9BBD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2D6C52021AF2CC1F002D9BBD /* Waymore.app */,
+				2D6C52021AF2CC1F002D9BBD /* Tracker.app */,
 				2D6C521B1AF2CC1F002D9BBD /* TrackerTests.xctest */,
 			);
 			name = Products;
@@ -244,7 +244,7 @@
 			);
 			name = Tracker;
 			productName = Waymore;
-			productReference = 2D6C52021AF2CC1F002D9BBD /* Waymore.app */;
+			productReference = 2D6C52021AF2CC1F002D9BBD /* Tracker.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2D6C521A1AF2CC1F002D9BBD /* TrackerTests */ = {
