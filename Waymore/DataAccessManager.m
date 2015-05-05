@@ -57,6 +57,7 @@
     
     NSString* newStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     self.userId = newStr;
+    NSLog(@"=====id: %@ =========", self.userId);
     return newStr;
 }
 
@@ -68,12 +69,18 @@
     request.HTTPMethod = @"POST";
     
     // This is how we set header fields
-    // [request setValue:@"application/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"application/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     [request setValue:@"sendLocation" forHTTPHeaderField:@"Message-Type"];
     
     // Convert your data and set your request's HTTPBody property
     NSString *sendlat = [NSString stringWithFormat:@"%f", lat];
     NSString *sendlon = [NSString stringWithFormat:@"%f", lon];
+    
+    //NSLog(@"lat: %@" ,sendlat);
+    //NSLog(@"lon: %@" ,sendlon);
+    //NSLog(@"id: %@" ,self.userId);
+
+    
     
     
     NSDictionary *tmp = [[NSDictionary alloc] initWithObjectsAndKeys:
@@ -81,8 +88,13 @@
                          sendlat, @"lat",
                          sendlon, @"lon",
                          nil];
+    /*
+    NSDictionary *fake = [[NSDictionary alloc] initWithObjectsAndKeys:
+                          @"123213", @"userid",
+                          nil];*/
     NSError *error ;
     NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:0 error:&error];
+    //NSData *fakedata = [NSJSONSerialization dataWithJSONObject:fake options:0 error:&error];
     //NSData *requestBodyData = [stringData dataUsingEncoding:NSUTF8StringEncoding];
     request.HTTPBody = postdata;
     
