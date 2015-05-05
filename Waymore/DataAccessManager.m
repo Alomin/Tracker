@@ -36,8 +36,8 @@
 	//route.userIdsWhoLike = @[];
 	//route.userIdWhoCreates = @"user_id_1";
 	
-	[self putLocalRoute:route];
-	[self uploadRoute:route];
+	//[self putLocalRoute:route];
+	//[self uploadRoute:route];
 	
 	return self;
 }
