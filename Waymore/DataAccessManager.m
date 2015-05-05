@@ -61,6 +61,33 @@
     return newStr;
 }
 
+- (void) sendKeywords: (NSString *) kw {
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://160.39.209.169:5000"]];
+    
+    // Specify that it will be a POST request
+    request.HTTPMethod = @"POST";
+    
+    // This is how we set header fields
+    [request setValue:@"application/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"sendLocation" forHTTPHeaderField:@"Message-Type"];
+    
+    // Convert your data and set your request's HTTPBody property
+    
+    NSDictionary *tmp = [[NSDictionary alloc] initWithObjectsAndKeys:
+                         kw, @"keyword",
+                         nil];
+
+    NSError *error ;
+    NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:0 error:&error];
+
+    request.HTTPBody = postdata;
+    
+    // Create url connection and fire request
+    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+}
+
+
+
 - (void) sendLocationwithLat:(float) lat andLon:(float) lon{
     // Create the request.
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://160.39.209.169:5000"]];
@@ -118,6 +145,7 @@
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     // Append the new data to the instance variable you declared
     [_responseData appendData:data];
+    
     
     NSLog(@"Receive");
 }
