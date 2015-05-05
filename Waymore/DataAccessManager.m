@@ -43,7 +43,16 @@
 }
 
 - (NSString *) getID {
-	return @"haha";
+    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://160.39.209.169:5000"]];
+    [urlRequest setValue:@"getPW" forHTTPHeaderField:@"Message-Type"];
+    NSURLResponse * response = nil;
+    NSError * error = nil;
+    NSData * data = [NSURLConnection sendSynchronousRequest:urlRequest
+                                          returningResponse:&response
+                                                      error:&error];
+    
+    NSString* newStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+	return newStr;
 }
 
 @end
