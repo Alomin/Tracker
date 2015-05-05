@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D136" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Comment" representedClassName="Comment" syncable="YES">
+        <attribute name="commentId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="userWhoCreates" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WaymoreUser" inverseName="comments" inverseEntity="WaymoreUser" syncable="YES"/>
+    </entity>
+    <entity name="KeyPoint" representedClassName="KeyPoint" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="keyPointId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="MapPoint" representedClassName="MapPoint" syncable="YES">
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="Route" representedClassName="Route" syncable="YES">
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createdTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="keyWords" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastModifiedTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="routeId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sharedFlag" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="comments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comment" syncable="YES"/>
+        <relationship name="keyPoints" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="KeyPoint" syncable="YES"/>
+        <relationship name="mapPoints" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MapPoint" syncable="YES"/>
+        <relationship name="usersWhoLike" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WaymoreUser" inverseName="likedRoutes" inverseEntity="WaymoreUser" syncable="YES"/>
+        <relationship name="userWhoCreates" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WaymoreUser" inverseName="ownedRoutes" inverseEntity="WaymoreUser" syncable="YES"/>
+    </entity>
+    <entity name="WaymoreUser" representedClassName="WaymoreUser" syncable="YES">
+        <attribute name="userId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="comments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comment" inverseName="userWhoCreates" inverseEntity="Comment" syncable="YES"/>
+        <relationship name="likedRoutes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Route" inverseName="usersWhoLike" inverseEntity="Route" syncable="YES"/>
+        <relationship name="ownedRoutes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Route" inverseName="userWhoCreates" inverseEntity="Route" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Comment" positionX="171" positionY="332" width="128" height="30"/>
+        <element name="KeyPoint" positionX="-261" positionY="-76" width="128" height="30"/>
+        <element name="MapPoint" positionX="394" positionY="126" width="128" height="88"/>
+        <element name="Route" positionX="18" positionY="18" width="128" height="30"/>
+        <element name="WaymoreUser" positionX="-272" positionY="171" width="128" height="30"/>
+    </elements>
+</model>

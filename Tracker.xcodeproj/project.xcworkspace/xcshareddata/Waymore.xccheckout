@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F1A47A5B-377D-4330-93A7-715AEC9D6AEB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Waymore</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>4A311FBD508E2517F739D0ACF833992AB899949B</key>
+		<string>https://github.com/coolpositron/Waymore.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Waymore.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>4A311FBD508E2517F739D0ACF833992AB899949B</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/coolpositron/Waymore.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>4A311FBD508E2517F739D0ACF833992AB899949B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>4A311FBD508E2517F739D0ACF833992AB899949B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Waymore</string>
+		</dict>
+	</array>
+</dict>
+</plist>
