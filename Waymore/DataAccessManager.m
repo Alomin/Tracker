@@ -42,6 +42,10 @@
     return self;
 }
 
+- (void)setUserId:(NSString *)newValue {
+    _userId = newValue;
+}
+
 - (NSString *) getID {
     NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://160.39.209.169:5000"]];
     [urlRequest setValue:@"getPW" forHTTPHeaderField:@"Message-Type"];
@@ -52,7 +56,7 @@
                                                       error:&error];
     
     NSString* newStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    _userId = newStr;
+    self.userId = newStr;
     return newStr;
 }
 
@@ -73,7 +77,7 @@
     
     
     NSDictionary *tmp = [[NSDictionary alloc] initWithObjectsAndKeys:
-                         _userId, @"userid",
+                         self.userId, @"userid",
                          sendlat, @"lat",
                          sendlon, @"lon",
                          nil];
