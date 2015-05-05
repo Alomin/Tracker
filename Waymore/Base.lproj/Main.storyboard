@@ -67,7 +67,7 @@
         <scene sceneID="5zw-At-nqn">
             <objects>
                 <navigationController id="Foq-rx-i4g" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Self" id="nCf-bw-EZR"/>
+                    <tabBarItem key="tabBarItem" title="Self" image="circle-user-7" id="nCf-bw-EZR"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kCS-c7-ssb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -275,13 +275,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C1P-lm-pAm" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2206.5" y="931.5"/>
+            <point key="canvasLocation" x="2080.5" y="544.5"/>
         </scene>
-        <!--Self-->
+        <!--Other-->
         <scene sceneID="ppi-ng-UEQ">
             <objects>
                 <navigationController id="lkJ-zP-0Ek" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Self" id="Mms-rA-tx5"/>
+                    <tabBarItem key="tabBarItem" title="Other" image="love" id="Mms-rA-tx5"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="p5W-BY-xS7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -292,7 +292,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="20x-ee-RMU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1593" y="931"/>
+            <point key="canvasLocation" x="1483" y="545"/>
         </scene>
         <!--Display Map View Controller-->
         <scene sceneID="HsT-DD-y1N">
@@ -366,4 +366,8 @@
             <point key="canvasLocation" x="2776.5" y="921"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="circle-user-7" width="30" height="30"/>
+        <image name="love" width="30" height="30"/>
+    </resources>
 </document>
