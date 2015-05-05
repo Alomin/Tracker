@@ -7,6 +7,7 @@
 #import "CrumbPath.h"
 #import "CrumbPathRenderer.h"
 #import "MapPoint.h"
+#import "DataAccessManager.h"
 
 #define LEFT 0
 #define RIGHT 1
@@ -170,14 +171,16 @@
         }
         
         //refresh all selected annotations
-//        NSArray *selectedAnnotations = self.mapView.selectedAnnotations;
-//        for(id annotation in selectedAnnotations) {
-//            [self.mapView deselectAnnotation:annotation animated:NO];
-//        }
-//        for(id annotation in selectedAnnotations) {
-//            [self.mapView selectAnnotation:annotation animated:NO];
-//        }
-//        [self.mapView setCenterCoordinate:self.mapView.region.center animated:NO];
+		/*      
+		 NSArray *selectedAnnotations = self.mapView.selectedAnnotations;
+        for(id annotation in selectedAnnotations) {
+            [self.mapView deselectAnnotation:annotation animated:NO];
+        }
+        for(id annotation in selectedAnnotations) {
+           [self.mapView selectAnnotation:annotation animated:NO];
+        }
+        [self.mapView setCenterCoordinate:self.mapView.region.center animated:NO];
+		 */
     }
     
 }
@@ -272,7 +275,10 @@
             }
             else if (!MKMapRectIsNull(updateRect))
             {
-				NSLog(@"cord 1 : %f and cord 2 : %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
+				//NSLog(@"cord 1 : %f and cord 2 : %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
+				DataAccessManager *dam = [DataAccessManager getInstance];
+				[dam sendLocationwithLat:newLocation.coordinate.latitude
+								  andLon:newLocation.coordinate.longitude];
                 // There is a non null update rect.
                 // Compute the currently visible map zoom scale.
                 MKZoomScale currentZoomScale = (CGFloat)(self.mapView.bounds.size.width / self.mapView.visibleMapRect.size.width);
