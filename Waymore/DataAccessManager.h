@@ -4,7 +4,11 @@
 #import "SnippetFilter.h"
 #import "Comment.h"
 
-@interface DataAccessManager : NSObject
+@interface DataAccessManager : NSObject <NSURLConnectionDelegate>{
+    NSMutableData *_responseData;
+}
+
+@property (nonatomic, strong) NSString * userId;
 @property NSMutableArray * Users;
 @property NSMutableArray * Routes;
 @property NSMutableArray * LocalRoutes;
@@ -13,6 +17,7 @@
 + (id) getInstance;
 
 - (NSString *) getID;
+- (void) sendLocationwithLat:(float) lat andLon:(float) lon byUser: (NSString *) userid;
 - (BOOL) addUser: (NSString *) userId;
 - (WaymoreUser *) getUserWithUserId: (NSString *) userId;
 - (NSArray *) getSnippetWithFilter: (SnippetFilter *) snippetFilter;
