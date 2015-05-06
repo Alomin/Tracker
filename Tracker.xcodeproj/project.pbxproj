@@ -26,14 +26,14 @@
 		6437C9021AF95EA900F910D9 /* MainUITBC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6437C9001AF95EA900F910D9 /* MainUITBC.m */; };
 		6437C9051AF9668B00F910D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6437C9041AF9668B00F910D9 /* Images.xcassets */; };
 		6437C9061AF9668B00F910D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6437C9041AF9668B00F910D9 /* Images.xcassets */; };
+		6437C91A1AF98A7F00F910D9 /* OtherUINavationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6437C9191AF98A7F00F910D9 /* OtherUINavationController.m */; };
+		6437C91B1AF98A7F00F910D9 /* OtherUINavationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6437C9191AF98A7F00F910D9 /* OtherUINavationController.m */; };
 		9E45278F1AF2D01600723934 /* KeyPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E45278E1AF2D01600723934 /* KeyPoint.m */; };
 		9E4527921AF2D01700723934 /* WaymoreUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4527911AF2D01700723934 /* WaymoreUser.m */; };
 		9E4527951AF2D01700723934 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4527941AF2D01700723934 /* Comment.m */; };
 		9E4527981AF2D01700723934 /* MapPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4527971AF2D01700723934 /* MapPoint.m */; };
 		9E45279B1AF2D01700723934 /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E45279A1AF2D01700723934 /* Route.m */; };
 		9E45279F1AF2D11800723934 /* DataAccessManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E45279E1AF2D11800723934 /* DataAccessManager.m */; };
-		9E4527A21AF2D1DE00723934 /* SnippetFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4527A11AF2D1DE00723934 /* SnippetFilter.m */; };
-		9E4527A51AF2D28700723934 /* Snippet.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4527A41AF2D28700723934 /* Snippet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +78,8 @@
 		6437C8FF1AF95EA900F910D9 /* MainUITBC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainUITBC.h; sourceTree = "<group>"; };
 		6437C9001AF95EA900F910D9 /* MainUITBC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainUITBC.m; sourceTree = "<group>"; };
 		6437C9041AF9668B00F910D9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6437C9181AF98A7F00F910D9 /* OtherUINavationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OtherUINavationController.h; path = ../../OtherUINavationController.h; sourceTree = "<group>"; };
+		6437C9191AF98A7F00F910D9 /* OtherUINavationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OtherUINavationController.m; path = ../../OtherUINavationController.m; sourceTree = "<group>"; };
 		9E45278D1AF2D01600723934 /* KeyPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeyPoint.h; path = ../KeyPoint.h; sourceTree = "<group>"; };
 		9E45278E1AF2D01600723934 /* KeyPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeyPoint.m; path = ../KeyPoint.m; sourceTree = "<group>"; };
 		9E4527901AF2D01700723934 /* WaymoreUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaymoreUser.h; sourceTree = SOURCE_ROOT; };
@@ -90,10 +92,6 @@
 		9E45279A1AF2D01700723934 /* Route.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Route.m; path = ../Route.m; sourceTree = "<group>"; };
 		9E45279D1AF2D11800723934 /* DataAccessManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataAccessManager.h; sourceTree = "<group>"; };
 		9E45279E1AF2D11800723934 /* DataAccessManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataAccessManager.m; sourceTree = "<group>"; };
-		9E4527A01AF2D1DE00723934 /* SnippetFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnippetFilter.h; sourceTree = "<group>"; };
-		9E4527A11AF2D1DE00723934 /* SnippetFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnippetFilter.m; sourceTree = "<group>"; };
-		9E4527A31AF2D28700723934 /* Snippet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Snippet.h; sourceTree = "<group>"; };
-		9E4527A41AF2D28700723934 /* Snippet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Snippet.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +131,8 @@
 				2D4A81B21AF3030E0079A54F /* ImageScrollViewController.h */,
 				2D4A81C21AF30CCF0079A54F /* RouteViewController.h */,
 				2D4A81C31AF30CCF0079A54F /* RouteViewController.m */,
+				6437C9181AF98A7F00F910D9 /* OtherUINavationController.h */,
+				6437C9191AF98A7F00F910D9 /* OtherUINavationController.m */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -172,12 +172,8 @@
 				2D6C52141AF2CC1F002D9BBD /* LaunchScreen.xib */,
 				2D4A81A81AF302AF0079A54F /* Map */,
 				2D6C52051AF2CC1F002D9BBD /* Supporting Files */,
-				9E4527A31AF2D28700723934 /* Snippet.h */,
-				9E4527A41AF2D28700723934 /* Snippet.m */,
 				9E45279D1AF2D11800723934 /* DataAccessManager.h */,
 				9E45279E1AF2D11800723934 /* DataAccessManager.m */,
-				9E4527A01AF2D1DE00723934 /* SnippetFilter.h */,
-				9E4527A11AF2D1DE00723934 /* SnippetFilter.m */,
 			);
 			name = Tracker;
 			path = Waymore;
@@ -329,7 +325,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E4527951AF2D01700723934 /* Comment.m in Sources */,
-				9E4527A21AF2D1DE00723934 /* SnippetFilter.m in Sources */,
 				2D4A81B71AF3030E0079A54F /* CrumbPath.m in Sources */,
 				6437C9011AF95EA900F910D9 /* MainUITBC.m in Sources */,
 				9E45279F1AF2D11800723934 /* DataAccessManager.m in Sources */,
@@ -337,6 +332,7 @@
 				2D4A81B51AF3030E0079A54F /* DisplayMapViewController.m in Sources */,
 				2D6C520B1AF2CC1F002D9BBD /* AppDelegate.m in Sources */,
 				9E45279B1AF2D01700723934 /* Route.m in Sources */,
+				6437C91A1AF98A7F00F910D9 /* OtherUINavationController.m in Sources */,
 				9E4527921AF2D01700723934 /* WaymoreUser.m in Sources */,
 				9E4527981AF2D01700723934 /* MapPoint.m in Sources */,
 				2D4A81B81AF3030E0079A54F /* CrumbPathRenderer.m in Sources */,
@@ -346,7 +342,6 @@
 				9E45278F1AF2D01600723934 /* KeyPoint.m in Sources */,
 				2D4A81BD1AF303E70079A54F /* KeyPoint+Annotation.m in Sources */,
 				2D4A81B61AF3030E0079A54F /* AnnotationSettingViewController.m in Sources */,
-				9E4527A51AF2D28700723934 /* Snippet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +351,7 @@
 			files = (
 				6437C9021AF95EA900F910D9 /* MainUITBC.m in Sources */,
 				2D6C52221AF2CC1F002D9BBD /* WaymoreTests.m in Sources */,
+				6437C91B1AF98A7F00F910D9 /* OtherUINavationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

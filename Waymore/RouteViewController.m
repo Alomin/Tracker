@@ -4,7 +4,6 @@
 
 @interface RouteViewController ()
 @property (weak, nonatomic) DisplayMapViewController * mapViewController;
-
 @end
 
 @implementation RouteViewController
@@ -18,20 +17,12 @@
 {
     NSString * segueName = segue.identifier;
     if ([segueName isEqualToString: @"MapSegue"]) {
-        NSLog(@"Get the handler of Map!");
         self.mapViewController = segue.destinationViewController;
-        // Do any additional setup after loading the view.
-        //    CLLocationCoordinate2D zoomLocation;
-        //    zoomLocation.latitude = 39.281516;
-        //    zoomLocation.longitude= -76.580806;
-        //    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 1000, 1000);
-        //    [self.mapView setRegion:viewRegion animated:YES];
         CLLocationCoordinate2D eventLocation;
         eventLocation.latitude = 39.281516;
         eventLocation.longitude= -76.580806;
-        KeyPoint *keyPoint = [[KeyPoint alloc] initWithTitle: @"Net Cat" withContent: @"Cat downloaded from the Internet" withLatitude:eventLocation.latitude withLongitude:eventLocation.longitude withPhoto:[UIImage imageNamed:@"cat.jpg"]];
+        KeyPoint *keyPoint = [[KeyPoint alloc] initWithTitle: @"Net Cat" withContent: @"Cat downloaded from the Internet" withLatitude:eventLocation.latitude withLongitude:eventLocation.longitude withPhoto:[UIImage imageNamed:@"two2"]];
         self.mapViewController.keyPoints = [NSMutableArray arrayWithArray:@[keyPoint]];
-        //self.mapViewController.routePoints = @[routePoint1, routePoint2, routePoint3];
     }
 }
 
