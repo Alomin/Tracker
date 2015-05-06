@@ -1,19 +1,18 @@
 //
-//  MainUITBC.m
+//  OtherViewController.m
 //  Tracker
 //
 //  Created by Tianlong Li on 5/5/15.
 //  Copyright (c) 2015 Waymore Inc. All rights reserved.
 //
 
-#import "MainUITBC.h"
-#import "DataAccessManager.h"
+#import "OtherViewController.h"
 
-@interface MainUITBC ()
+@interface OtherViewController ()
 
 @end
 
-@implementation MainUITBC
+@implementation OtherViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,21 +24,34 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) viewDidAppear:(BOOL)animated{
-	[super viewDidAppear:animated];
-	NSString *id = @"yay";
-	//NSString *id = [[DataAccessManager getInstance] getID];
-	//NSLog(@"id is %@",id);
-	NSString *msg = [NSString stringWithFormat:@"This is your unique key: %@, please keep it safe", id];
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+	if (buttonIndex == 0) {
+		NSString *pw = [alertView textFieldAtIndex:0].text;
+		NSLog(@"input is %@", pw);
+		if (![pw isEqualToString:@"yes"])
+			[self inputCheck];
+		else {
+			[self performSegueWithIdentifier:@"OtherSegue"
+									  sender:nil];
+		}
+	}
+}
+
+- (void)inputCheck {
 	UIAlertView *alertview = [[UIAlertView alloc]
-							  initWithTitle:@"Welcome!"
-							  message:msg
+							  initWithTitle:@"Track"
+							  message:@"Please enter the ID of your interest"
 							  delegate:self
 							  cancelButtonTitle:nil
-							  otherButtonTitles:@"Gotcha!", nil];
+							  otherButtonTitles:@"Go!", nil];
+	[alertview setAlertViewStyle:UIAlertViewStyleSecureTextInput];
 	[alertview show];
 }
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+	[self inputCheck];
+	return NO;
+}
 
 /*
 #pragma mark - Navigation

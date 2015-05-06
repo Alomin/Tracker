@@ -1,6 +1,5 @@
 #import "DataAccessManager.h"
 #import "keyPoint.h"
-#import "Snippet.h"
 
 @interface DataAccessManager()
 //@property NSMutableArray * Users;
@@ -27,17 +26,8 @@
         self.LocalSnippets = [[NSMutableArray alloc] init];
     }
     
-    KeyPoint *keyPoint = [[KeyPoint alloc] initWithTitle: @"Net Cat" withContent: @"Cat downloaded from the Internet" withLatitude:39.281516 withLongitude:-76.580806 withPhoto:[UIImage imageNamed:@"cat.jpg"]];
-    Route *route = [[Route alloc] init];
-    route.keyPoints = @[keyPoint];
-    route.city = @"New York";
-    route.mapPoints = @[];
-    //route.userIdsWhoLike = @[];
-    //route.userIdsWhoLike = @[];
-    //route.userIdWhoCreates = @"user_id_1";
-    
-    //[self putLocalRoute:route];
-    //[self uploadRoute:route];
+    //KeyPoint *keyPoint = [[KeyPoint alloc] initWithTitle: @"Net Cat" withContent: @"Cat downloaded from the Internet" withLatitude:39.281516 withLongitude:-76.580806 withPhoto:[UIImage imageNamed:@"cat.jpg"]];
+	//NSLog(@"%@", keyPoint.title);
     
     return self;
 }

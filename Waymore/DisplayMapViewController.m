@@ -49,9 +49,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    
-    
-    
+
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView
@@ -89,9 +87,8 @@
             
             UIButton *disclosureButton = [[UIButton alloc] init];
             disclosureButton.frame = CGRectMake(0, 0, 46, 46);
-            [disclosureButton setTitle:@"Edit" forState:UIControlStateNormal];
+			//[disclosureButton setTitle:@"Edit" forState:UIControlStateNormal];
             [disclosureButton setTitleColor:self.view.tintColor forState:UIControlStateNormal];
-            //[disclosureButton setImage:[UIImage imageNamed:@"cat.jpg"] forState:UIControlStateNormal];
             disclosureButton.tag = RIGHT;
             pinView.rightCalloutAccessoryView = disclosureButton;
             
@@ -110,7 +107,7 @@
         UIButton *button = (UIButton *) control;
         if(button.tag == LEFT) {
             [self performSegueWithIdentifier:@"PictureDetailSegue" sender:view];
-        } else if (button.tag == RIGHT) {
+		} else if (button.tag == RIGHT) {
             [self performSegueWithIdentifier:@"EditSegue" sender:view];
         }
     }
@@ -169,31 +166,18 @@
             [self.mapView selectAnnotation:annotationSettingViewController.inputKeyPoint animated:NO];
             
         }
-        
-        //refresh all selected annotations
-		/*      
-		 NSArray *selectedAnnotations = self.mapView.selectedAnnotations;
-        for(id annotation in selectedAnnotations) {
-            [self.mapView deselectAnnotation:annotation animated:NO];
-        }
-        for(id annotation in selectedAnnotations) {
-           [self.mapView selectAnnotation:annotation animated:NO];
-        }
-        [self.mapView setCenterCoordinate:self.mapView.region.center animated:NO];
-		 */
     }
     
 }
 
-- (void)startTracking {
+- (void)startTracking{
     NSLog(@"start tracing");
+	
+	//Self tracking
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     self.locationManager.activityType = CLActivityTypeFitness;
-    
-    // Movement threshold for new events.
     self.locationManager.distanceFilter = 10; // meters
-    
     [self.locationManager startUpdatingLocation];
 }
 
@@ -228,12 +212,97 @@
     return _locationManager;
 }
 
+- (void) startTrackingOther {
+	[self performSelectorInBackground:@selector(backgroundOtherTracker)
+						   withObject:nil];
+
+}
+
+- (void) backgroundOtherTracker {
+	NSLog(@"Called");
+	float a = 39.281516;
+	float b = -76.580806;
+	while (YES) {
+		float data[] = {a, b};
+		[self updateOtherWithLocation:data];
+		a += 0.0001;
+		b += 0.0001;
+		[NSThread sleepForTimeInterval:1.0f];
+	}
+}
+
+- (void) updateOtherWithLocation:(float [])location {
+	if (location != nil)
+	{
+		// we are not using deferred location updates, so always use the latest location
+		CLLocation *newLocation = [[CLLocation alloc]initWithLatitude:location[0]
+															longitude:location[1]];
+		NSLog(@"Got data %f and %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
+		
+		[self.routePoints addObject:[[MapPoint alloc] initWithLatitude:newLocation.coordinate.latitude withLongitude:newLocation.coordinate.longitude withTime:[NSDate date]]];
+		if (self.crumbs == nil)
+		{
+			// This is the first time we're getting a location update, so create
+			// the CrumbPath and add it to the map.
+			//
+			_crumbs = [[CrumbPath alloc] initWithCenterCoordinate:newLocation.coordinate];
+			[self.mapView addOverlay:self.crumbs level:MKOverlayLevelAboveRoads];
+			
+			// on the first location update only, zoom map to user location
+			CLLocationCoordinate2D newCoordinate = newLocation.coordinate;
+			
+			// default -boundingMapRect size is 1km^2 centered on coord
+			MKCoordinateRegion region = [self coordinateRegionWithCenter:newCoordinate approximateRadiusInMeters:2500];
+			
+			[self.mapView setRegion:region animated:YES];
+		}
+		else
+		{
+			// This is a subsequent location update.
+			//
+			// If the crumbs MKOverlay model object determines that the current location has moved
+			// far enough from the previous location, use the returned updateRect to redraw just
+			// the changed area.
+			//
+			// note: cell-based devices will locate you using the triangulation of the cell towers.
+			// so you may experience spikes in location data (in small time intervals)
+			// due to cell tower triangulation.
+			//
+			BOOL boundingMapRectChanged = NO;
+			MKMapRect updateRect = [self.crumbs addCoordinate:newLocation.coordinate boundingMapRectChanged:&boundingMapRectChanged];
+			if (boundingMapRectChanged)
+			{
+				// MKMapView expects an overlay's boundingMapRect to never change (it's a readonly @property).
+				// So for the MapView to recognize the overlay's size has changed, we remove it, then add it again.
+				[self.mapView removeOverlays:self.mapView.overlays];
+				_crumbPathRenderer = nil;
+				[self.mapView addOverlay:self.crumbs level:MKOverlayLevelAboveRoads];
+			}
+			else if (!MKMapRectIsNull(updateRect))
+			{
+				//NSLog(@"cord 1 : %f and cord 2 : %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
+				DataAccessManager *dam = [DataAccessManager getInstance];
+				[dam sendLocationwithLat:newLocation.coordinate.latitude
+								  andLon:newLocation.coordinate.longitude];
+				// There is a non null update rect.
+				// Compute the currently visible map zoom scale.
+				MKZoomScale currentZoomScale = (CGFloat)(self.mapView.bounds.size.width / self.mapView.visibleMapRect.size.width);
+				// Find out the line width at this zoom scale and outset the updateRect by that amount
+				CGFloat lineWidth = MKRoadWidthAtZoomScale(currentZoomScale);
+				updateRect = MKMapRectInset(updateRect, -lineWidth, -lineWidth);
+				// Ask the overlay view to update just the changed area.
+				[self.crumbPathRenderer setNeedsDisplayInMapRect:updateRect];
+			}
+		}
+	}
+}
+
 - (void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     if (locations != nil && locations.count > 0)
     {
         // we are not using deferred location updates, so always use the latest location
         CLLocation *newLocation = locations[0];
-        
+		
         [self.routePoints addObject:[[MapPoint alloc] initWithLatitude:newLocation.coordinate.latitude withLongitude:newLocation.coordinate.longitude withTime:[NSDate date]]];
         if (self.crumbs == nil)
         {
@@ -275,7 +344,7 @@
             }
             else if (!MKMapRectIsNull(updateRect))
             {
-				//NSLog(@"cord 1 : %f and cord 2 : %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
+				NSLog(@"cord 1 : %f and cord 2 : %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
 				DataAccessManager *dam = [DataAccessManager getInstance];
 				[dam sendLocationwithLat:newLocation.coordinate.latitude
 								  andLon:newLocation.coordinate.longitude];

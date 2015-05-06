@@ -1,11 +1,7 @@
 #import <Foundation/Foundation.h>
-#import "Route.h"
-#import "WaymoreUser.h"
-#import "SnippetFilter.h"
-#import "Comment.h"
 
 @interface DataAccessManager : NSObject <NSURLConnectionDelegate>{
-    NSMutableData *_responseData;
+	NSMutableData *_responseData;
 }
 
 @property (nonatomic, strong) NSString * userId;
@@ -19,14 +15,7 @@
 - (NSString *) getID;
 - (void) sendLocationwithLat:(float) lat andLon:(float) lon;
 - (BOOL) addUser: (NSString *) userId;
-- (WaymoreUser *) getUserWithUserId: (NSString *) userId;
-- (NSArray *) getSnippetWithFilter: (SnippetFilter *) snippetFilter;
-- (NSArray *) getLocalSnippetWithFilter: (SnippetFilter *) snippetFilter;
-- (Route *) getRouteWithRouteId: (NSString *) routeId;
-- (Route *) getLocalRouteWithRouteId: (NSString *) routeId;
 - (NSArray *) getRoutesWithUserId: (NSString *) userId;
-- (NSString *) putLocalRoute: (Route *) route;
-- (BOOL) uploadRoute: (Route *) route;
 - (BOOL) deleteLocalRouteWithRouteId: (NSString *) routeId;
 - (BOOL) setShareSetting: (NSString *) routeId isShare: (BOOL) flag;
 - (BOOL) deleteRouteWithRouteId: (NSString *) routeId;
