@@ -1,7 +1,7 @@
 #import "DataAccessManager.h"
 #import "keyPoint.h"
 #import "Snippet.h"
-
+#import "main.h"
 @interface DataAccessManager()
 //@property NSMutableArray * Users;
 //@property NSMutableArray * Routes;
@@ -69,7 +69,7 @@
     
     // This is how we set header fields
     [request setValue:@"application/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-    [request setValue:@"sendLocation" forHTTPHeaderField:@"Message-Type"];
+    [request setValue:@"download" forHTTPHeaderField:@"Message-Type"];
     
     // Convert your data and set your request's HTTPBody property
     
@@ -97,7 +97,7 @@
     
     // This is how we set header fields
     [request setValue:@"application/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-    [request setValue:@"sendLocation" forHTTPHeaderField:@"Message-Type"];
+    [request setValue:@"upLoad" forHTTPHeaderField:@"Message-Type"];
     
     // Convert your data and set your request's HTTPBody property
     NSString *sendlat = [NSString stringWithFormat:@"%f", lat];
@@ -146,7 +146,11 @@
     // Append the new data to the instance variable you declared
     [_responseData appendData:data];
     
-    
+    NSError * error;
+    NSDictionary * mylocation = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    NSString * lat = [mylocation objectForKey:@"lat"];
+    NSString * lon = [mylocation objectForKey:@"lon"];
+    location = @[lat,lon];
     NSLog(@"Receive");
 }
 
