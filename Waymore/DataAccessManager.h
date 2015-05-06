@@ -1,12 +1,7 @@
 #import <Foundation/Foundation.h>
-
-=======
-#import "Route.h"
-#import "WaymoreUser.h"
 #import "SnippetFilter.h"
-#import "Comment.h"
 #import "main.h"
->>>>>>> d0cfccb20dc2acaea10090ed0adf6bc8c81e96eb
+
 @interface DataAccessManager : NSObject <NSURLConnectionDelegate>{
 	NSMutableData *_responseData;
 }
