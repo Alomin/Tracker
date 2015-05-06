@@ -246,7 +246,9 @@
 			// the CrumbPath and add it to the map.
 			//
 			_crumbs = [[CrumbPath alloc] initWithCenterCoordinate:newLocation.coordinate];
-			[self.mapView addOverlay:self.crumbs level:MKOverlayLevelAboveRoads];
+			dispatch_async(dispatch_get_main_queue(), ^{
+				[self.mapView addOverlay:self.crumbs level:MKOverlayLevelAboveRoads];
+			});
 			
 			// on the first location update only, zoom map to user location
 			CLLocationCoordinate2D newCoordinate = newLocation.coordinate;

@@ -24,7 +24,6 @@
 		2D6C52221AF2CC1F002D9BBD /* WaymoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6C52211AF2CC1F002D9BBD /* WaymoreTests.m */; };
 		6414F6541AF9A43000B94E1C /* OtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6414F6531AF9A43000B94E1C /* OtherViewController.m */; };
 		6437C9011AF95EA900F910D9 /* MainUITBC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6437C9001AF95EA900F910D9 /* MainUITBC.m */; };
-		6437C9021AF95EA900F910D9 /* MainUITBC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6437C9001AF95EA900F910D9 /* MainUITBC.m */; };
 		6437C9051AF9668B00F910D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6437C9041AF9668B00F910D9 /* Images.xcassets */; };
 		6437C9061AF9668B00F910D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6437C9041AF9668B00F910D9 /* Images.xcassets */; };
 		9E45278F1AF2D01600723934 /* KeyPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E45278E1AF2D01600723934 /* KeyPoint.m */; };
@@ -77,7 +76,6 @@
 		6437C8FF1AF95EA900F910D9 /* MainUITBC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainUITBC.h; sourceTree = "<group>"; };
 		6437C9001AF95EA900F910D9 /* MainUITBC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainUITBC.m; sourceTree = "<group>"; };
 		6437C9041AF9668B00F910D9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		94BDF4E51AF9A1D100D5007C /* main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
 		9E45278D1AF2D01600723934 /* KeyPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeyPoint.h; path = ../KeyPoint.h; sourceTree = "<group>"; };
 		9E45278E1AF2D01600723934 /* KeyPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeyPoint.m; path = ../KeyPoint.m; sourceTree = "<group>"; };
 		9E4527961AF2D01700723934 /* MapPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapPoint.h; path = ../MapPoint.h; sourceTree = "<group>"; };
@@ -176,7 +174,6 @@
 				2D6C520A1AF2CC1F002D9BBD /* AppDelegate.m */,
 				2D6C52061AF2CC1F002D9BBD /* Info.plist */,
 				2D6C52071AF2CC1F002D9BBD /* main.m */,
-				94BDF4E51AF9A1D100D5007C /* main.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

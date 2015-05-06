@@ -1,6 +1,4 @@
 #import <Foundation/Foundation.h>
-#import "SnippetFilter.h"
-#import "main.h"
 
 @interface DataAccessManager : NSObject <NSURLConnectionDelegate>{
 	NSMutableData *_responseData;

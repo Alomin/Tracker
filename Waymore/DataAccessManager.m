@@ -1,9 +1,8 @@
 #import "DataAccessManager.h"
 #import "keyPoint.h"
+
 @interface DataAccessManager()
-//@property NSMutableArray * Users;
-//@property NSMutableArray * Routes;
-//@property NSMutableArray * Snippets;
+
 @end
 
 @implementation DataAccessManager
@@ -139,7 +138,7 @@
     NSDictionary * mylocation = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
     NSString * lat = [mylocation objectForKey:@"lat"];
     NSString * lon = [mylocation objectForKey:@"lon"];
-    location = @[lat,lon];
+    //location = @[lat,lon];
     NSLog(@"Receive");
 }
 
