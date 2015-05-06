@@ -78,6 +78,7 @@
 		6437C8FF1AF95EA900F910D9 /* MainUITBC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainUITBC.h; sourceTree = "<group>"; };
 		6437C9001AF95EA900F910D9 /* MainUITBC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainUITBC.m; sourceTree = "<group>"; };
 		6437C9041AF9668B00F910D9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		94BDF4E51AF9A1D100D5007C /* main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
 		9E45278D1AF2D01600723934 /* KeyPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeyPoint.h; path = ../KeyPoint.h; sourceTree = "<group>"; };
 		9E45278E1AF2D01600723934 /* KeyPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeyPoint.m; path = ../KeyPoint.m; sourceTree = "<group>"; };
 		9E4527901AF2D01700723934 /* WaymoreUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaymoreUser.h; sourceTree = SOURCE_ROOT; };
@@ -188,6 +189,7 @@
 			children = (
 				2D6C52061AF2CC1F002D9BBD /* Info.plist */,
 				2D6C52071AF2CC1F002D9BBD /* main.m */,
+				94BDF4E51AF9A1D100D5007C /* main.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
