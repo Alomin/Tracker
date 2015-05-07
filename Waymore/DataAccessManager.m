@@ -24,10 +24,6 @@
         self.LocalSnippets = [[NSMutableArray alloc] init];
 		self.queue = dispatch_queue_create("my queue", nil);
     }
-    
-    //KeyPoint *keyPoint = [[KeyPoint alloc] initWithTitle: @"Net Cat" withContent: @"Cat downloaded from the Internet" withLatitude:39.281516 withLongitude:-76.580806 withPhoto:[UIImage imageNamed:@"cat.jpg"]];
-	//NSLog(@"%@", keyPoint.title);
-    
     return self;
 }
 
@@ -95,19 +91,13 @@
     //NSLog(@"lat: %@" ,sendlat);
     //NSLog(@"lon: %@" ,sendlon);
     //NSLog(@"id: %@" ,self.userId);
-
-    
-    
     
     NSDictionary *tmp = [[NSDictionary alloc] initWithObjectsAndKeys:
                          self.userId, @"userid",
                          sendlat, @"lat",
                          sendlon, @"lon",
                          nil];
-    /*
-    NSDictionary *fake = [[NSDictionary alloc] initWithObjectsAndKeys:
-                          @"123213", @"userid",
-                          nil];*/
+
     NSError *error ;
     NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:0 error:&error];
     //NSData *fakedata = [NSJSONSerialization dataWithJSONObject:fake options:0 error:&error];
@@ -139,7 +129,7 @@
     NSDictionary * mylocation = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
     NSString * lat = [mylocation objectForKey:@"lat"];
     NSString * lon = [mylocation objectForKey:@"lon"];
-    //location = @[lat,lon];
+    self.location = @[lat,lon];
     NSLog(@"Receive");
 }
 
