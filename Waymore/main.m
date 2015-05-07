@@ -12,7 +12,6 @@
 NSArray* location;
 
 int main(int argc, char * argv[]) {
-    location = @[@"500", @"0"];
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }

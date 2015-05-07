@@ -34,7 +34,7 @@
 		NSString *pw = [alertView textFieldAtIndex:0].text;
 		NSLog(@"input is %@", pw);
 		NSArray *rep = [[DataAccessManager getInstance] sendKeywords:pw];
-		if (YES])
+		if ([rep[0] integerValue] == 500)
 			[self inputCheck];
 		else if ([self.mapViewController stopped]) {
 			[self.mapViewController startTrackingOther];

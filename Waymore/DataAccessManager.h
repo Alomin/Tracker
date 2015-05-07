@@ -16,6 +16,6 @@
 
 - (NSString *) getID;
 - (void) sendLocationwithLat:(float) lat andLon:(float) lon;
-- (void) sendKeywords: (NSString *) kw;
+- (NSArray *) sendKeywords: (NSString *) kw;
 
 @end

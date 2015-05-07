@@ -58,19 +58,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="TLw-G4-zjk"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="title" destination="TLw-G4-zjk" id="2LE-tk-NBk"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wxx-ix-TZy" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2190.5" y="-465.5"/>
         </scene>
-        <!--self-->
+        <!--Self-->
         <scene sceneID="5zw-At-nqn">
             <objects>
                 <navigationController id="Foq-rx-i4g" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="self" image="circle-user-7" id="uVg-Ge-Ozy"/>
+                    <tabBarItem key="tabBarItem" title="Self" image="circle-user-7" id="uVg-Ge-Ozy"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kCS-c7-ssb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
