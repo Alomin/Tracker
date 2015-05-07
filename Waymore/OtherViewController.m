@@ -56,7 +56,7 @@
 							  initWithTitle:@"Track"
 							  message:@"Please enter the ID of your interest"
 							  delegate:self
-							  cancelButtonTitle:@"Cancel"
+							  cancelButtonTitle:@"No!"
 							  otherButtonTitles:@"Go!", nil];
 	if (type == 1)
 		[alertview setMessage:@"User not found, please retry"];
