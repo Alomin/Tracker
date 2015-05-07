@@ -46,29 +46,37 @@
     return newStr;
 }
 
-- (void) sendKeywords: (NSString *) kw {
+- (NSArray *) sendKeywords: (NSString *) kw {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://160.39.209.169:5000"]];
     
     // Specify that it will be a POST request
-    request.HTTPMethod = @"POST";
+    request.HTTPMethod = @"GET";
     
     // This is how we set header fields
     [request setValue:@"application/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     [request setValue:@"download" forHTTPHeaderField:@"Message-Type"];
+    [request setValue:kw forHTTPHeaderField:@"UserId"];
     
     // Convert your data and set your request's HTTPBody property
     
-    NSDictionary *tmp = [[NSDictionary alloc] initWithObjectsAndKeys:
-                         kw, @"keyword",
-                         nil];
+    NSURLResponse * response = nil;
+    NSError * error = nil;
+    NSData * data = [NSURLConnection sendSynchronousRequest:request
+                                          returningResponse:&response
+                                                      error:&error];
+    //NSError * error;
+    NSDictionary * mylocation = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    NSString * lat = [mylocation objectForKey:@"lat"];
+    NSString * lon = [mylocation objectForKey:@"lon"];
+    self.location = @[lat,lon];
+    return self.location;
+    
+    //NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:0 error:&error];
 
-    NSError *error ;
-    NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:0 error:&error];
-
-    request.HTTPBody = postdata;
+    //request.HTTPBody = postdata;
     
     // Create url connection and fire request
-    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    //NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 }
 
 
@@ -83,6 +91,7 @@
     // This is how we set header fields
     [request setValue:@"application/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     [request setValue:@"upLoad" forHTTPHeaderField:@"Message-Type"];
+    [request setValue:self.userId forHTTPHeaderField:@"UserId"];
     
     // Convert your data and set your request's HTTPBody property
     NSString *sendlat = [NSString stringWithFormat:@"%f", lat];
@@ -93,7 +102,6 @@
     //NSLog(@"id: %@" ,self.userId);
     
     NSDictionary *tmp = [[NSDictionary alloc] initWithObjectsAndKeys:
-                         self.userId, @"userid",
                          sendlat, @"lat",
                          sendlon, @"lon",
                          nil];
@@ -125,11 +133,11 @@
     // Append the new data to the instance variable you declared
     [_responseData appendData:data];
     
-    NSError * error;
-    NSDictionary * mylocation = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-    NSString * lat = [mylocation objectForKey:@"lat"];
-    NSString * lon = [mylocation objectForKey:@"lon"];
-    self.location = @[lat,lon];
+    //NSError * error;
+    //NSDictionary * mylocation = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    //NSString * lat = [mylocation objectForKey:@"lat"];
+    //NSString * lon = [mylocation objectForKey:@"lon"];
+    //self.location = @[lat,lon];
     NSLog(@"Receive");
 }
 
