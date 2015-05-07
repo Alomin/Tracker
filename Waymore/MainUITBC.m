@@ -27,8 +27,7 @@
 
 - (void) viewDidAppear:(BOOL)animated{
 	[super viewDidAppear:animated];
-	NSString *id = @"yay";
-	//NSString *id = [[DataAccessManager getInstance] getID];
+	NSString *id = [[DataAccessManager getInstance] getID];
 	//NSLog(@"id is %@",id);
 	NSString *msg = [NSString stringWithFormat:@"This is your unique key: %@, please keep it safe", id];
 	UIAlertView *alertview = [[UIAlertView alloc]
