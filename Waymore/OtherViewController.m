@@ -26,38 +26,48 @@
 
 - (IBAction)refresher:(UIBarButtonItem *)sender {
 	[self.mapViewController stopTrackingOther];
-	[self inputCheck];
+	[self inputCheckwithType: 0];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-	if (buttonIndex == 0) {
+	if (buttonIndex == 1) {
 		NSString *pw = [alertView textFieldAtIndex:0].text;
 		NSLog(@"input is %@", pw);
 		NSArray *rep = [[DataAccessManager getInstance] sendKeywords:pw];
 		if ([rep[0] integerValue] == 500)
-			[self inputCheck];
+			[self inputCheckwithType:1];
+		else if ([rep[0] integerValue] == 1000)
+			[self inputCheckwithType:2];
 		else if ([self.mapViewController stopped]) {
 			[self.mapViewController startTrackingOther];
 		} else {
 			[self performSegueWithIdentifier:@"OtherSegue"
 									  sender:nil];
 		}
-	}
+	} else
+		return;
 }
 
-- (void)inputCheck {
+//0: initial
+//1: wrong pw
+//2: no data
+- (void)inputCheckwithType:(int) type {
 	UIAlertView *alertview = [[UIAlertView alloc]
 							  initWithTitle:@"Track"
 							  message:@"Please enter the ID of your interest"
 							  delegate:self
-							  cancelButtonTitle:nil
+							  cancelButtonTitle:@"Cancel"
 							  otherButtonTitles:@"Go!", nil];
+	if (type == 1)
+		[alertview setMessage:@"User not found, please retry"];
+	else if (type == 2)
+		[alertview setMessage:@"User not online, please retry"];
 	[alertview setAlertViewStyle:UIAlertViewStyleSecureTextInput];
 	[alertview show];
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
-	[self inputCheck];
+	[self inputCheckwithType:0];
 	return NO;
 }
 

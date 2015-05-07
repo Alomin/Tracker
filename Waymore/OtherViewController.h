@@ -9,5 +9,5 @@
 #import "RouteViewController.h"
 
 @interface OtherViewController : RouteViewController
-- (void) inputCheck;
+- (void)inputCheckwithType:(int) type;
 @end

@@ -54,7 +54,7 @@
     
     // This is how we set header fields
     [request setValue:@"application/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-    [request setValue:@"download" forHTTPHeaderField:@"Message-Type"];
+    [request setValue:@"downLoad" forHTTPHeaderField:@"Message-Type"];
     [request setValue:kw forHTTPHeaderField:@"UserId"];
     
     // Convert your data and set your request's HTTPBody property
