@@ -156,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LG3-Gl-F0o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2760.5" y="-476"/>
+            <point key="canvasLocation" x="2792.5" y="-561"/>
         </scene>
         <!--Annotation Setting View Controller-->
         <scene sceneID="kfP-YW-gng">
@@ -203,7 +203,7 @@
                                     <action selector="CancelTapped:" destination="NGC-F1-55P" eventType="touchUpInside" id="jxB-p8-pdH"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Content" translatesAutoresizingMaskIntoConstraints="NO" id="5d1-VF-1Jd">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write something" translatesAutoresizingMaskIntoConstraints="NO" id="5d1-VF-1Jd">
                                 <rect key="frame" x="16" y="160" width="343" height="128"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -311,9 +311,6 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="TkJ-DB-K5C">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="EP3-SB-r2c" appends="YES" id="etp-Fa-PaQ"/>
-                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -324,11 +321,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ggj-Bf-sCK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="EP3-SB-r2c">
-                    <connections>
-                        <action selector="longPressed:" destination="oSE-eP-YjY" id="Ikt-de-XRR"/>
-                    </connections>
-                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2754.5" y="248"/>
         </scene>

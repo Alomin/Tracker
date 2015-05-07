@@ -32,7 +32,7 @@
 }
 
 - (NSString *) getID {
-    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://160.39.208.170:5000"]];
+    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://52.6.51.207:80"]];
     [urlRequest setValue:@"getPW" forHTTPHeaderField:@"Message-Type"];
     NSURLResponse * response = nil;
     NSError * error = nil;
@@ -47,7 +47,7 @@
 }
 
 - (NSArray *) sendKeywords: (NSString *) kw {
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://160.39.208.170:5000"]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://52.6.51.207:80"]];
     
     // Specify that it will be a POST request
     request.HTTPMethod = @"GET";
@@ -83,7 +83,7 @@
 
 - (void) sendLocationwithLat:(float) lat andLon:(float) lon{
     // Create the request.
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://160.39.208.170:5000"]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://52.6.51.207:80"]];
     
     // Specify that it will be a POST request
     request.HTTPMethod = @"POST";

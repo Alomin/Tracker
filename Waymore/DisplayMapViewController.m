@@ -83,7 +83,7 @@
             
             UIButton *disclosureButton = [[UIButton alloc] init];
             disclosureButton.frame = CGRectMake(0, 0, 46, 46);
-			//[disclosureButton setTitle:@"Edit" forState:UIControlStateNormal];
+			[disclosureButton setTitle:@"Edit" forState:UIControlStateNormal];
             [disclosureButton setTitleColor:self.view.tintColor forState:UIControlStateNormal];
             disclosureButton.tag = RIGHT;
             pinView.rightCalloutAccessoryView = disclosureButton;
@@ -138,11 +138,13 @@
 
 - (IBAction)longPressed:(UILongPressGestureRecognizer *)sender {
     // Here we get the CGPoint for the touch and convert it to latitude and longitude coordinates to display on the map
-    CGPoint point = [sender locationInView:self.mapView];
-    CLLocationCoordinate2D location = [self.mapView convertPoint:point toCoordinateFromView:self.mapView];
-    NSLog(@"Location found from Map: %f %f",location.latitude,location.longitude);
-    KeyPoint *newKeyPoint = [[KeyPoint alloc] initWithTitle:@"Title" withContent:@"Content" withLatitude:location.latitude withLongitude:location.longitude withPhoto:NULL];
-    [self performSegueWithIdentifier:@"EditSegue" sender:newKeyPoint];
+	if (sender.state ==  UIGestureRecognizerStateBegan) {
+		CGPoint point = [sender locationInView:self.mapView];
+		CLLocationCoordinate2D location = [self.mapView convertPoint:point toCoordinateFromView:self.mapView];
+		NSLog(@"Location found from Map: %f %f",location.latitude,location.longitude);
+		KeyPoint *newKeyPoint = [[KeyPoint alloc] initWithTitle:@"Title" withContent:@"Content" withLatitude:location.latitude withLongitude:location.longitude withPhoto:NULL];
+		[self performSegueWithIdentifier:@"EditSegue" sender:newKeyPoint];
+	}
 }
 
 
@@ -150,8 +152,7 @@
     if ([unwindSegue.sourceViewController isKindOfClass: [AnnotationSettingViewController class]]) {
         AnnotationSettingViewController *annotationSettingViewController = (AnnotationSettingViewController *) unwindSegue.sourceViewController;
         if (annotationSettingViewController.isCreateNew) {
-            NSLog(@"Create new");
-            NSLog(@"%@",annotationSettingViewController.outputKeyPoint.title);
+            NSLog(@"Create new %@", annotationSettingViewController.outputKeyPoint.title);
             [self.mapView addAnnotation:annotationSettingViewController.outputKeyPoint];
         } else {
             annotationSettingViewController.inputKeyPoint.title = annotationSettingViewController.outputKeyPoint.title;

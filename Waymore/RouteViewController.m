@@ -14,7 +14,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-	NSString *uniqueID = [NSString stringWithFormat:@"Your unique ID: nonono"];
+	NSString *uniqueID = [NSString stringWithFormat:@"Your unique ID: %@", [[DataAccessManager getInstance] userId]];
 	self.navigationItem.title = uniqueID;
 	if (self.startButton)
 		self.startButton.layer.cornerRadius = self.startButton.bounds.size.width/2;
@@ -29,7 +29,7 @@
         CLLocationCoordinate2D eventLocation;
         eventLocation.latitude = 39.281516;
         eventLocation.longitude= -76.580806;
-        KeyPoint *keyPoint = [[KeyPoint alloc] initWithTitle: @"NYC" withContent: @"Best place in the world!" withLatitude:eventLocation.latitude withLongitude:eventLocation.longitude withPhoto:[UIImage imageNamed:@"two2"]];
+        KeyPoint *keyPoint = [[KeyPoint alloc] initWithTitle: @"NYC" withContent: @"Best place in the world!" withLatitude:eventLocation.latitude withLongitude:eventLocation.longitude withPhoto:[UIImage imageNamed:@"two1"]];
         self.mapViewController.keyPoints = [NSMutableArray arrayWithArray:@[keyPoint]];
 		if ([segueName isEqualToString: @"OtherSegue"]) {
 			self.mapViewController.keyPoints = nil;

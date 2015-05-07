@@ -23,9 +23,8 @@
 		2D6C52161AF2CC1F002D9BBD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D6C52141AF2CC1F002D9BBD /* LaunchScreen.xib */; };
 		2D6C52221AF2CC1F002D9BBD /* WaymoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6C52211AF2CC1F002D9BBD /* WaymoreTests.m */; };
 		6414F6541AF9A43000B94E1C /* OtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6414F6531AF9A43000B94E1C /* OtherViewController.m */; };
+		6414F6561AFBF89900B94E1C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6414F6551AFBF89900B94E1C /* Images.xcassets */; };
 		6437C9011AF95EA900F910D9 /* MainUITBC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6437C9001AF95EA900F910D9 /* MainUITBC.m */; };
-		6437C9051AF9668B00F910D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6437C9041AF9668B00F910D9 /* Images.xcassets */; };
-		6437C9061AF9668B00F910D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6437C9041AF9668B00F910D9 /* Images.xcassets */; };
 		9E45278F1AF2D01600723934 /* KeyPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E45278E1AF2D01600723934 /* KeyPoint.m */; };
 		9E4527981AF2D01700723934 /* MapPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4527971AF2D01700723934 /* MapPoint.m */; };
 		9E45279B1AF2D01700723934 /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E45279A1AF2D01700723934 /* Route.m */; };
@@ -73,9 +72,9 @@
 		2D6C52211AF2CC1F002D9BBD /* WaymoreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WaymoreTests.m; sourceTree = "<group>"; };
 		6414F6521AF9A43000B94E1C /* OtherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherViewController.h; sourceTree = "<group>"; };
 		6414F6531AF9A43000B94E1C /* OtherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherViewController.m; sourceTree = "<group>"; };
+		6414F6551AFBF89900B94E1C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6437C8FF1AF95EA900F910D9 /* MainUITBC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainUITBC.h; sourceTree = "<group>"; };
 		6437C9001AF95EA900F910D9 /* MainUITBC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainUITBC.m; sourceTree = "<group>"; };
-		6437C9041AF9668B00F910D9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9E45278D1AF2D01600723934 /* KeyPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeyPoint.h; path = ../KeyPoint.h; sourceTree = "<group>"; };
 		9E45278E1AF2D01600723934 /* KeyPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeyPoint.m; path = ../KeyPoint.m; sourceTree = "<group>"; };
 		9E4527961AF2D01700723934 /* MapPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapPoint.h; path = ../MapPoint.h; sourceTree = "<group>"; };
@@ -152,7 +151,7 @@
 		2D6C52041AF2CC1F002D9BBD /* Tracker */ = {
 			isa = PBXGroup;
 			children = (
-				6437C9041AF9668B00F910D9 /* Images.xcassets */,
+				6414F6551AFBF89900B94E1C /* Images.xcassets */,
 				9E45279C1AF2D02600723934 /* Model */,
 				6437C8FF1AF95EA900F910D9 /* MainUITBC.h */,
 				6437C9001AF95EA900F910D9 /* MainUITBC.m */,
@@ -291,7 +290,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6437C9051AF9668B00F910D9 /* Images.xcassets in Resources */,
+				6414F6561AFBF89900B94E1C /* Images.xcassets in Resources */,
 				2D6C52111AF2CC1F002D9BBD /* Main.storyboard in Resources */,
 				2D6C52161AF2CC1F002D9BBD /* LaunchScreen.xib in Resources */,
 			);
@@ -301,7 +300,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6437C9061AF9668B00F910D9 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,7 +333,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6437C9021AF95EA900F910D9 /* MainUITBC.m in Sources */,
 				2D6C52221AF2CC1F002D9BBD /* WaymoreTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
