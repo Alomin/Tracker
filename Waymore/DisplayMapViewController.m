@@ -225,14 +225,14 @@
 
 - (void) backgroundOtherTracker {
 	NSLog(@"Called bakcgroundOtherTracker");
-	float a = 39.281516;
-	float b = -76.580806;
+	//float a = 39.281516;
+	//float b = -76.580806;
 	[self setStopped:NO];
 	while (!_stopped) {
 		float data[] = {a, b};
-		[self updateOtherWithLocation:data];
-		a += 0.0005;
-		b += 0.0005;
+		[self updateOtherWithLocation:[[DataAccessManager getInstance] location]];
+		//a += 0.0005;
+		//b += 0.0005;
 		[NSThread sleepForTimeInterval:1.0f];
 	}
 }

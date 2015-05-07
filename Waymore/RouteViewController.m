@@ -1,13 +1,23 @@
 #import "RouteViewController.h"
 #import "KeyPoint+Annotation.h"
+#import "DataAccessManager.h"
 
 @interface RouteViewController ()
+//@property (weak, nonatomic) IBOutlet UINavigationItem *title;
 @end
 
 @implementation RouteViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0.0, 0.0, 320.0, 44.0)];
+	[label setBackgroundColor:[UIColor clearColor]];
+	[label setNumberOfLines:0];
+	[label setTextColor:[UIColor whiteColor]];
+	[label setTextAlignment:NSTextAlignmentCenter];
+	NSString *msg = [NSString stringWithFormat:@"Your unique ID: %@", [[DataAccessManager getInstance] userId]];
+	[label setText:msg];
+	//self.title.titleView = label;
 }
 
 
