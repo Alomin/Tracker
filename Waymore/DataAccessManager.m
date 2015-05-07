@@ -129,7 +129,7 @@
     NSDictionary * mylocation = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
     NSString * lat = [mylocation objectForKey:@"lat"];
     NSString * lon = [mylocation objectForKey:@"lon"];
-    self.location = @[lat,lon];
+    self.newlocation = @[lat,lon];
     NSLog(@"Receive");
 }
 

@@ -5,7 +5,7 @@
 }
 
 @property (nonatomic, strong) NSString * userId;
-@property (nonatomic, strong) NSArray * location;
+@property (nonatomic, strong) NSArray * newlocation;
 @property NSMutableArray * Users;
 @property NSMutableArray * Routes;
 @property NSMutableArray * LocalRoutes;

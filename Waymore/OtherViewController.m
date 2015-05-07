@@ -33,7 +33,8 @@
 	if (buttonIndex == 0) {
 		NSString *pw = [alertView textFieldAtIndex:0].text;
 		NSLog(@"input is %@", pw);
-		if (![pw isEqualToString:@"yes"])
+		NSArray *rep = [[DataAccessManager getInstance] sendKeywords:pw];
+		if (YES])
 			[self inputCheck];
 		else if ([self.mapViewController stopped]) {
 			[self.mapViewController startTrackingOther];

@@ -229,10 +229,10 @@
 	//float b = -76.580806;
 	[self setStopped:NO];
 	while (!_stopped) {
-		float data[] = {a, b};
-		[self updateOtherWithLocation:[[DataAccessManager getInstance] location]];
-		//a += 0.0005;
-		//b += 0.0005;
+		//float data[] = {a, b};
+		NSArray *loc = [[DataAccessManager getInstance] newlocation];
+		float data[] = {[loc[0] floatValue], [loc[1] floatValue]};
+		[self updateOtherWithLocation:data];
 		[NSThread sleepForTimeInterval:1.0f];
 	}
 }
