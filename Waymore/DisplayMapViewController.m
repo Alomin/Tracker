@@ -290,9 +290,6 @@
 			}
 			else if (!MKMapRectIsNull(updateRect))
 			{
-				DataAccessManager *dam = [DataAccessManager getInstance];
-				[dam sendLocationwithLat:newLocation.coordinate.latitude
-								  andLon:newLocation.coordinate.longitude];
 				// There is a non null update rect.
 				// Compute the currently visible map zoom scale.
 				MKZoomScale currentZoomScale = (CGFloat)(self.mapView.bounds.size.width / self.mapView.visibleMapRect.size.width);
@@ -311,6 +308,9 @@
     {
         // we are not using deferred location updates, so always use the latest location
         CLLocation *newLocation = locations[0];
+		DataAccessManager *dam = [DataAccessManager getInstance];
+		[dam sendLocationwithLat:newLocation.coordinate.latitude
+						  andLon:newLocation.coordinate.longitude];
 		
         [self.routePoints addObject:[[MapPoint alloc] initWithLatitude:newLocation.coordinate.latitude withLongitude:newLocation.coordinate.longitude withTime:[NSDate date]]];
         if (self.crumbs == nil)
@@ -353,7 +353,7 @@
             }
             else if (!MKMapRectIsNull(updateRect))
             {
-				NSLog(@"cord 1 : %f and cord 2 : %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
+				//NSLog(@"cord 1 : %f and cord 2 : %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
 				DataAccessManager *dam = [DataAccessManager getInstance];
 				[dam sendLocationwithLat:newLocation.coordinate.latitude
 								  andLon:newLocation.coordinate.longitude];
