@@ -12,5 +12,4 @@
 @import MapKit;
 
 @interface CrumbPathRenderer : MKOverlayRenderer
-
 @end

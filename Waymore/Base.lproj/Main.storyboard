@@ -67,7 +67,7 @@
         <scene sceneID="5zw-At-nqn">
             <objects>
                 <navigationController id="Foq-rx-i4g" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Self" id="nCf-bw-EZR"/>
+                    <tabBarItem key="tabBarItem" title="Self" image="circle-user-7" id="nCf-bw-EZR"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kCS-c7-ssb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -239,10 +239,10 @@
             </objects>
             <point key="canvasLocation" x="3395.5" y="-1377.5"/>
         </scene>
-        <!--Route View Controller-->
+        <!--Other View Controller-->
         <scene sceneID="6Z1-Us-vZv">
             <objects>
-                <viewController id="sAz-gW-c0j" customClass="RouteViewController" sceneMemberID="viewController">
+                <viewController id="sAz-gW-c0j" customClass="OtherViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RTy-4C-xTi"/>
                         <viewControllerLayoutGuide type="bottom" id="2ta-9W-PO4"/>
@@ -252,36 +252,32 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yrm-Sm-2jp">
-                                <rect key="frame" x="0.0" y="72" width="375" height="468"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <connections>
-                                    <segue destination="oSE-eP-YjY" kind="embed" identifier="MapSegue" id="L8X-bX-Wt8"/>
+                                    <segue destination="oSE-eP-YjY" kind="embed" identifier="OtherSegue" id="L8X-bX-Wt8"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TU3-EP-JYx">
-                                <rect key="frame" x="72" y="542" width="247" height="73"/>
-                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Start">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="buttonTapped:" destination="sAz-gW-c0j" eventType="touchUpInside" id="O5X-Jm-JDD"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="13u-iZ-HiJ"/>
+                    <navigationItem key="navigationItem" id="13u-iZ-HiJ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="Z5G-ER-YIX">
+                            <connections>
+                                <action selector="refresher:" destination="sAz-gW-c0j" id="cvO-Zc-KzN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C1P-lm-pAm" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2206.5" y="931.5"/>
+            <point key="canvasLocation" x="2160.5" y="498.5"/>
         </scene>
-        <!--Self-->
+        <!--Other-->
         <scene sceneID="ppi-ng-UEQ">
             <objects>
                 <navigationController id="lkJ-zP-0Ek" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Self" id="Mms-rA-tx5"/>
+                    <tabBarItem key="tabBarItem" title="Other" image="love" id="Mms-rA-tx5"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="p5W-BY-xS7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -292,7 +288,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="20x-ee-RMU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1593" y="931"/>
+            <point key="canvasLocation" x="1483" y="545"/>
         </scene>
         <!--Display Map View Controller-->
         <scene sceneID="HsT-DD-y1N">
@@ -303,7 +299,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ijT-dI-xG3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Nob-21-c5u">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="468"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="TkJ-DB-K5C">
@@ -339,11 +335,11 @@
                         <viewControllerLayoutGuide type="bottom" id="j5L-eM-Aak"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="VqN-Md-6CD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="468"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ncc-cG-b8V">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="468"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <connections>
                                     <outlet property="delegate" destination="sBO-XS-X1M" id="5F0-bA-nxD"/>
                                 </connections>
@@ -366,4 +362,8 @@
             <point key="canvasLocation" x="2776.5" y="921"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="circle-user-7" width="30" height="30"/>
+        <image name="love" width="30" height="30"/>
+    </resources>
 </document>

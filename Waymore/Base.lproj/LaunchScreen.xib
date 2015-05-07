@@ -17,30 +17,33 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="many1" translatesAutoresizingMaskIntoConstraints="NO" id="30x-Df-Tx2">
-                    <rect key="frame" x="68" y="251" width="278" height="234"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sbbudify" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
+                    <rect key="frame" x="20" y="8" width="374" height="167"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="234" id="AdF-4V-X4R"/>
+                        <constraint firstAttribute="height" constant="167" id="sOT-MS-tWU"/>
                     </constraints>
-                </imageView>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sbbudify" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
-                    <rect key="frame" x="20" y="8" width="374" height="43"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="42"/>
+                    <color key="textColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="many1" translatesAutoresizingMaskIntoConstraints="NO" id="30x-Df-Tx2">
+                    <rect key="frame" x="59" y="243" width="297" height="249"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="249" id="ytA-1g-0Q7"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="30x-Df-Tx2" firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="87r-sP-bDp"/>
-                <constraint firstItem="kId-c2-rCX" firstAttribute="trailing" secondItem="8ie-xW-0ye" secondAttribute="trailing" id="CWI-Vi-Xuy"/>
-                <constraint firstItem="30x-Df-Tx2" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Gc5-Jo-IKu"/>
-                <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
-                <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
-                <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
-                <constraint firstItem="kId-c2-rCX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="cj1-Qf-qlV"/>
-                <constraint firstItem="kId-c2-rCX" firstAttribute="leading" secondItem="8ie-xW-0ye" secondAttribute="leading" id="dKe-ZG-sq7"/>
-                <constraint firstItem="30x-Df-Tx2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="68" id="ouf-45-RUo"/>
+                <constraint firstItem="kId-c2-rCX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1PS-U9-OLf"/>
+                <constraint firstItem="kId-c2-rCX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="1Ra-dj-LWm"/>
+                <constraint firstItem="30x-Df-Tx2" firstAttribute="top" secondItem="kId-c2-rCX" secondAttribute="bottom" constant="68" id="7n5-uA-TzV"/>
+                <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="AAV-zO-SUO"/>
+                <constraint firstItem="kId-c2-rCX" firstAttribute="leading" secondItem="8ie-xW-0ye" secondAttribute="leading" id="V8g-Uw-WzY"/>
+                <constraint firstItem="8ie-xW-0ye" firstAttribute="centerX" secondItem="30x-Df-Tx2" secondAttribute="centerX" id="e6Z-pz-SRJ"/>
+                <constraint firstItem="30x-Df-Tx2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="59" id="iSp-ye-3pk"/>
+                <constraint firstItem="kId-c2-rCX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="vwj-YR-Rui"/>
+                <constraint firstItem="8ie-xW-0ye" firstAttribute="trailing" secondItem="kId-c2-rCX" secondAttribute="trailing" id="x7Q-bl-uZn"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>

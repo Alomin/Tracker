@@ -1,14 +1,6 @@
-//
-//  Route.h
-//  Waymore
-//
-//  Created by Yuxuan Wang on 4/30/15.
-//  Copyright (c) 2015 Waymore Inc. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 
-@class Comment, KeyPoint, MapPoint, WaymoreUser;
+@class Comment, KeyPoint, MapPoint;
 
 @interface Route : NSObject
 
@@ -22,6 +14,5 @@
 @property (nonatomic, retain) NSArray *keyPoints;
 @property (nonatomic, retain) NSArray *mapPoints;
 @property (nonatomic, retain) NSArray *usersWhoLike;
-@property (nonatomic, retain) WaymoreUser *userWhoCreates;
 
 @end

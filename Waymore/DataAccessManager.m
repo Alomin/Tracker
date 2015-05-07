@@ -1,11 +1,8 @@
 #import "DataAccessManager.h"
 #import "keyPoint.h"
-#import "Snippet.h"
 
 @interface DataAccessManager()
-//@property NSMutableArray * Users;
-//@property NSMutableArray * Routes;
-//@property NSMutableArray * Snippets;
+
 @end
 
 @implementation DataAccessManager
@@ -25,19 +22,11 @@
         self.Routes = [[NSMutableArray alloc] init];
         self.LocalRoutes = [[NSMutableArray alloc] init];
         self.LocalSnippets = [[NSMutableArray alloc] init];
+		self.queue = dispatch_queue_create("my queue", nil);
     }
     
-    KeyPoint *keyPoint = [[KeyPoint alloc] initWithTitle: @"Net Cat" withContent: @"Cat downloaded from the Internet" withLatitude:39.281516 withLongitude:-76.580806 withPhoto:[UIImage imageNamed:@"cat.jpg"]];
-    Route *route = [[Route alloc] init];
-    route.keyPoints = @[keyPoint];
-    route.city = @"New York";
-    route.mapPoints = @[];
-    //route.userIdsWhoLike = @[];
-    //route.userIdsWhoLike = @[];
-    //route.userIdWhoCreates = @"user_id_1";
-    
-    //[self putLocalRoute:route];
-    //[self uploadRoute:route];
+    //KeyPoint *keyPoint = [[KeyPoint alloc] initWithTitle: @"Net Cat" withContent: @"Cat downloaded from the Internet" withLatitude:39.281516 withLongitude:-76.580806 withPhoto:[UIImage imageNamed:@"cat.jpg"]];
+	//NSLog(@"%@", keyPoint.title);
     
     return self;
 }
@@ -69,7 +58,7 @@
     
     // This is how we set header fields
     [request setValue:@"application/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-    [request setValue:@"sendLocation" forHTTPHeaderField:@"Message-Type"];
+    [request setValue:@"download" forHTTPHeaderField:@"Message-Type"];
     
     // Convert your data and set your request's HTTPBody property
     
@@ -97,7 +86,7 @@
     
     // This is how we set header fields
     [request setValue:@"application/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-    [request setValue:@"sendLocation" forHTTPHeaderField:@"Message-Type"];
+    [request setValue:@"upLoad" forHTTPHeaderField:@"Message-Type"];
     
     // Convert your data and set your request's HTTPBody property
     NSString *sendlat = [NSString stringWithFormat:@"%f", lat];
@@ -146,7 +135,11 @@
     // Append the new data to the instance variable you declared
     [_responseData appendData:data];
     
-    
+    NSError * error;
+    NSDictionary * mylocation = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    NSString * lat = [mylocation objectForKey:@"lat"];
+    NSString * lon = [mylocation objectForKey:@"lon"];
+    //location = @[lat,lon];
     NSLog(@"Receive");
 }
 
