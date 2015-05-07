@@ -225,15 +225,16 @@
 
 - (void) backgroundOtherTracker {
 	NSLog(@"Called bakcgroundOtherTracker");
-	//float a = 39.281516;
-	//float b = -76.580806;
 	[self setStopped:NO];
+	DataAccessManager *dam = [DataAccessManager getInstance];
 	while (!_stopped) {
-		//float data[] = {a, b};
-		NSArray *loc = [[DataAccessManager getInstance] newlocation];
+		[dam sendKeywords:dam.tarId];
+		if (![dam newlocation])
+			continue;
+		NSArray *loc = [dam newlocation];
 		float data[] = {[loc[0] floatValue], [loc[1] floatValue]};
 		[self updateOtherWithLocation:data];
-		[NSThread sleepForTimeInterval:1.0f];
+		[NSThread sleepForTimeInterval:0.5f];
 	}
 }
 

@@ -5,6 +5,7 @@
 }
 
 @property (nonatomic, strong) NSString * userId;
+@property (nonatomic, strong) NSString * tarId;
 @property (nonatomic, strong) NSArray * newlocation;
 @property NSMutableArray * Users;
 @property NSMutableArray * Routes;

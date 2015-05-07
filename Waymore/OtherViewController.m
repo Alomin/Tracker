@@ -39,8 +39,10 @@
 		else if ([rep[0] integerValue] == 1000)
 			[self inputCheckwithType:2];
 		else if ([self.mapViewController stopped]) {
+			[[DataAccessManager getInstance] setTarId:pw];
 			[self.mapViewController startTrackingOther];
 		} else {
+			[[DataAccessManager getInstance] setTarId:pw];
 			[self performSegueWithIdentifier:@"OtherSegue"
 									  sender:nil];
 		}
