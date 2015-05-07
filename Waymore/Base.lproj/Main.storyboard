@@ -261,13 +261,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="13u-iZ-HiJ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="Z5G-ER-YIX"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="Z5G-ER-YIX">
+                            <connections>
+                                <action selector="refresher:" destination="sAz-gW-c0j" id="cvO-Zc-KzN"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C1P-lm-pAm" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2080.5" y="544.5"/>
+            <point key="canvasLocation" x="2160.5" y="498.5"/>
         </scene>
         <!--Other-->
         <scene sceneID="ppi-ng-UEQ">

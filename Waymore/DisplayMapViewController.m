@@ -13,14 +13,10 @@
 #define RIGHT 1
 
 @interface DisplayMapViewController () <CLLocationManagerDelegate>
-
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) NSArray *infoList;
-
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) CrumbPath *crumbs;
 @property (nonatomic, strong) CrumbPathRenderer *crumbPathRenderer;
-
 @end
 
 @implementation DisplayMapViewController
@@ -213,20 +209,30 @@
 }
 
 - (void) startTrackingOther {
-	[self performSelectorInBackground:@selector(backgroundOtherTracker)
-						   withObject:nil];
+	dispatch_queue_t queue = [[DataAccessManager getInstance] queue];
+		dispatch_async(queue,^{
+			[self backgroundOtherTracker];
+		});
+}
 
+- (void) stopTrackingOther {
+	NSLog(@"Called stopTrackingOther");
+	[self setStopped:YES];
+	[NSThread sleepForTimeInterval:0.1f];
+	[self setCrumbs:nil];
+	[self.mapView removeOverlays:self.mapView.overlays];
 }
 
 - (void) backgroundOtherTracker {
-	NSLog(@"Called");
+	NSLog(@"Called bakcgroundOtherTracker");
 	float a = 39.281516;
 	float b = -76.580806;
-	while (YES) {
+	[self setStopped:NO];
+	while (!_stopped) {
 		float data[] = {a, b};
 		[self updateOtherWithLocation:data];
-		a += 0.0001;
-		b += 0.0001;
+		a += 0.0005;
+		b += 0.0005;
 		[NSThread sleepForTimeInterval:1.0f];
 	}
 }
@@ -246,6 +252,7 @@
 			// the CrumbPath and add it to the map.
 			//
 			_crumbs = [[CrumbPath alloc] initWithCenterCoordinate:newLocation.coordinate];
+			
 			dispatch_async(dispatch_get_main_queue(), ^{
 				[self.mapView addOverlay:self.crumbs level:MKOverlayLevelAboveRoads];
 			});
@@ -282,7 +289,6 @@
 			}
 			else if (!MKMapRectIsNull(updateRect))
 			{
-				//NSLog(@"cord 1 : %f and cord 2 : %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
 				DataAccessManager *dam = [DataAccessManager getInstance];
 				[dam sendLocationwithLat:newLocation.coordinate.latitude
 								  andLon:newLocation.coordinate.longitude];

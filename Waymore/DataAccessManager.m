@@ -22,6 +22,7 @@
         self.Routes = [[NSMutableArray alloc] init];
         self.LocalRoutes = [[NSMutableArray alloc] init];
         self.LocalSnippets = [[NSMutableArray alloc] init];
+		self.queue = dispatch_queue_create("my queue", nil);
     }
     
     //KeyPoint *keyPoint = [[KeyPoint alloc] initWithTitle: @"Net Cat" withContent: @"Cat downloaded from the Internet" withLatitude:39.281516 withLongitude:-76.580806 withPhoto:[UIImage imageNamed:@"cat.jpg"]];

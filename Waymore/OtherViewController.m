@@ -24,13 +24,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)refresher:(UIBarButtonItem *)sender {
+	[self.mapViewController stopTrackingOther];
+	[self inputCheck];
+}
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
 	if (buttonIndex == 0) {
 		NSString *pw = [alertView textFieldAtIndex:0].text;
 		NSLog(@"input is %@", pw);
 		if (![pw isEqualToString:@"yes"])
 			[self inputCheck];
-		else {
+		else if ([self.mapViewController stopped]) {
+			[self.mapViewController startTrackingOther];
+		} else {
 			[self performSegueWithIdentifier:@"OtherSegue"
 									  sender:nil];
 		}

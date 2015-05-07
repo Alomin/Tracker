@@ -9,17 +9,11 @@
 @property NSMutableArray * Routes;
 @property NSMutableArray * LocalRoutes;
 @property NSMutableArray * LocalSnippets;
+@property dispatch_queue_t queue;
 
 + (id) getInstance;
 
 - (NSString *) getID;
 - (void) sendLocationwithLat:(float) lat andLon:(float) lon;
-- (BOOL) addUser: (NSString *) userId;
-- (NSArray *) getRoutesWithUserId: (NSString *) userId;
-- (BOOL) deleteLocalRouteWithRouteId: (NSString *) routeId;
-- (BOOL) setShareSetting: (NSString *) routeId isShare: (BOOL) flag;
-- (BOOL) deleteRouteWithRouteId: (NSString *) routeId;
-- (BOOL) setLike: (NSString *) routeId withUserId: (NSString *) userId isLike: (BOOL) flag;
-- (NSString *) addComment: (NSString *) content withRouteId: (NSString *) routeId withUserId: (NSString *) userId;
 
 @end

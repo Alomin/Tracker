@@ -1,16 +1,13 @@
 #import "RouteViewController.h"
-#import "DisplayMapViewController.h"
 #import "KeyPoint+Annotation.h"
 
 @interface RouteViewController ()
-@property (weak, nonatomic) DisplayMapViewController * mapViewController;
 @end
 
 @implementation RouteViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do view setup here.
 }
 
 
@@ -27,9 +24,8 @@
 		if ([segueName isEqualToString: @"OtherSegue"]) {
 			self.mapViewController.keyPoints = nil;
 			[self.mapViewController performSelector:@selector(startTrackingOther)
-					   withObject:nil
-					   afterDelay:3];
-			//[self.mapViewController startTrackingWithType:1];
+										 withObject:nil
+										 afterDelay:3];
 		}
     }
 }
