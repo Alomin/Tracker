@@ -2,12 +2,22 @@
 #import "KeyPoint+Annotation.h"
 
 @interface RouteViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
+
 @end
 
 @implementation RouteViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	NSString *uniqueID = [NSString stringWithFormat:@"Your unique ID: nonono"];
+	self.navigationItem.title = uniqueID;
+	if (self.startButton)
+		self.startButton.layer.cornerRadius = self.startButton.bounds.size.width/2;
 }
 
 
@@ -35,9 +45,12 @@
          "Start"]) {
 		[self.mapViewController startTracking];
         [sender setTitle:@"Stop" forState:UIControlStateNormal];
+		[sender setBackgroundImage:[UIImage imageNamed:@"button-stop"] forState:UIControlStateNormal];
     } else {
         [self.mapViewController stopTracking];
         [sender setTitle:@"Start" forState:UIControlStateNormal];
+		[sender setBackgroundImage:[UIImage imageNamed:@"button-play"] forState:UIControlStateNormal];
+
     }
 }
 @end

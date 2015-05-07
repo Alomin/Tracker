@@ -11,39 +11,39 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2015 Sbuddify Inc. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
-                    <rect key="frame" x="20" y="695" width="374" height="21"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2015 Tracker Inc. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
+                    <rect key="frame" x="20" y="695" width="392" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sbbudify" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
-                    <rect key="frame" x="20" y="8" width="374" height="167"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tracker" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
+                    <rect key="frame" x="20" y="8" width="392" height="167"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="167" id="sOT-MS-tWU"/>
+                        <constraint firstAttribute="height" constant="167" id="eHH-wt-Hi2"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="42"/>
-                    <color key="textColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="HiraKakuProN-W6" family="Hiragino Kaku Gothic ProN" pointSize="42"/>
+                    <color key="textColor" red="0.0" green="0.50196081399917603" blue="1" alpha="0.70000000000000007" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="many1" translatesAutoresizingMaskIntoConstraints="NO" id="30x-Df-Tx2">
-                    <rect key="frame" x="59" y="243" width="297" height="249"/>
+                    <rect key="frame" x="59" y="243" width="315" height="249"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="249" id="ytA-1g-0Q7"/>
+                        <constraint firstAttribute="height" constant="249" id="VA7-ko-Udq"/>
                     </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="kId-c2-rCX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1PS-U9-OLf"/>
-                <constraint firstItem="kId-c2-rCX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="1Ra-dj-LWm"/>
-                <constraint firstItem="30x-Df-Tx2" firstAttribute="top" secondItem="kId-c2-rCX" secondAttribute="bottom" constant="68" id="7n5-uA-TzV"/>
-                <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="AAV-zO-SUO"/>
-                <constraint firstItem="kId-c2-rCX" firstAttribute="leading" secondItem="8ie-xW-0ye" secondAttribute="leading" id="V8g-Uw-WzY"/>
-                <constraint firstItem="8ie-xW-0ye" firstAttribute="centerX" secondItem="30x-Df-Tx2" secondAttribute="centerX" id="e6Z-pz-SRJ"/>
-                <constraint firstItem="30x-Df-Tx2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="59" id="iSp-ye-3pk"/>
-                <constraint firstItem="kId-c2-rCX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="vwj-YR-Rui"/>
-                <constraint firstItem="8ie-xW-0ye" firstAttribute="trailing" secondItem="kId-c2-rCX" secondAttribute="trailing" id="x7Q-bl-uZn"/>
+                <constraint firstItem="kId-c2-rCX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="5fA-7Y-dgi"/>
+                <constraint firstItem="kId-c2-rCX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="6uq-6N-fdN"/>
+                <constraint firstItem="kId-c2-rCX" firstAttribute="leading" secondItem="8ie-xW-0ye" secondAttribute="leading" id="8kd-CN-IXd"/>
+                <constraint firstItem="8ie-xW-0ye" firstAttribute="trailing" secondItem="kId-c2-rCX" secondAttribute="trailing" id="GB7-oP-Dxf"/>
+                <constraint firstItem="8ie-xW-0ye" firstAttribute="centerX" secondItem="30x-Df-Tx2" secondAttribute="centerX" id="VM7-YR-5Ml"/>
+                <constraint firstItem="30x-Df-Tx2" firstAttribute="top" secondItem="kId-c2-rCX" secondAttribute="bottom" constant="68" id="cjd-XX-1mz"/>
+                <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="lRK-z3-idU"/>
+                <constraint firstItem="30x-Df-Tx2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="59" id="mPy-hq-jzv"/>
+                <constraint firstAttribute="trailing" secondItem="kId-c2-rCX" secondAttribute="trailing" constant="2" id="tWF-8U-W2c"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
