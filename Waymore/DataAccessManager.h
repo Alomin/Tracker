@@ -1,10 +1,11 @@
 #import <Foundation/Foundation.h>
 
-@interface DataAccessManager : NSObject <NSURLConnectionDelegate>{
+@interface DataAccessManager : NSObject <NSURLConnectionDelegate> {
 	NSMutableData *_responseData;
 }
 
 @property (nonatomic, strong) NSString * userId;
+@property (nonatomic, strong) NSArray * location;
 @property NSMutableArray * Users;
 @property NSMutableArray * Routes;
 @property NSMutableArray * LocalRoutes;
@@ -15,5 +16,6 @@
 
 - (NSString *) getID;
 - (void) sendLocationwithLat:(float) lat andLon:(float) lon;
+- (void) sendKeywords: (NSString *) kw;
 
 @end
