@@ -28,6 +28,8 @@ def listener():
 	elif flask.request.headers["Message_Type"] == 'upLoad':
 		usrid = flask.request.headers["usrid"]
 		ids[usrid] = (flask.request.data,time.time())
+		post = {'usr':usrid,'content':ids[usrid]}
+		COLLECTION.insert(post)
 	elif flask.request.headers["Message_Type"] == 'download':
 		try: 
 			targetId = flask.request.headers["usrid"]
@@ -50,6 +52,6 @@ if __name__ == '__main__':
 	CLIENT = MongoClient('localhost', 27017)
 	DB = CLIENT.test_database
 	COLLECTION = DB.spotify
-	post = {}
+	#post = {}
 	COLLECTION.insert(post)
 	application.run(host = '')
